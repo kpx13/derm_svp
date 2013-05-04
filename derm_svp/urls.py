@@ -17,6 +17,6 @@ urlpatterns = patterns('',
     url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$' , views.home_page),
+    url(r'^$' , views.add_fingerprint_page),
     
 )

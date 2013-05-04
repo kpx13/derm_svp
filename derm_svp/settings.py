@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'filebrowser',
     'django.contrib.admin',
     'pages',
+    'fingerprints',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Научное исследование связи дерматоглифики и системно-векторной психологии</title>
+        <link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet">
+        <link href="/static/css/style.css" type="text/css" rel="stylesheet">
+        <script src="/static/js/jquery.js"></script>
+        <script src="/static/bootstrap/js/bootstrap.js"></script>
+        
+        <style>
+            .hidden {display: none}
+            ul li {list-style: none}
+            ul li {float: left; padding-right: 5px}
+        </style>
+        
+    </head>
+        
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <form>
+                    {{ form_finger.pattern }}
+                    <div id='orient' class='hidden'>
+                        {{ form_finger.orient }}
+                        <div class='clear'></div>
+                    </div>
+                    <div id='rc' class='hidden'>
+                        уГС: {{ form_finger.rc_u }}
+                        рГС: {{ form_finger.rc_r }}
+                    </div>
+                </form>
+            </div>
+        </div>   
+        
+        
+        <script>
+            $('#id_pattern').change(function(){ 
+                val = $('#id_pattern').val();
+                if ((val == 'L') | (val == 'Lp') | (val == 'Ws') | (val == '2L')) { $('#orient').removeClass('hidden') }
+                else { $('#orient').addClass('hidden') };
+                if ((val == 'A') | (val == 'At') | (val == 'C')) { $('#rc').addClass('hidden') }
+                else { $('#rc').removeClass('hidden') }
+            });
+        </script>
+    </body>
+</html>  
